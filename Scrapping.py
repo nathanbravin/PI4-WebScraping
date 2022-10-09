@@ -23,7 +23,7 @@ def is_element_present(how, what):
 
 
 # Leitura dos dados do JSON.
-with open("credenciais.json", encoding='utf-8') as jsonCredenciais:
+with open("credenciais-exemplo.json", encoding='utf-8') as jsonCredenciais:
     credenciais = json.load(jsonCredenciais)
 
 # URL da página de login do Twitter.
@@ -111,7 +111,7 @@ if login():
     search('Bolsonaro OR Lula')
     
     articles = driver.find_elements(By.XPATH, '//article[@data-testid="tweet"]')
-    for i in range(10):
+    for i in range(100):
         
         tweet = driver.find_element(By.XPATH, '//div[@data-testid="tweetText"]').text
         tweets.append(tweet)
